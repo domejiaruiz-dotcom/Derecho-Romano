@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificación del Derecho</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dorado: #C9A84C;
+            --rojo: #8B1A1A;
+            --crema: #FAF7F0;
+            --oscuro: #1a1a1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; background-color: var(--crema); color: var(--oscuro); line-height: 1.6; }
+        
+        /* Navegación */
+        nav {
+            background: var(--rojo);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            color: var(--crema);
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding: 8px 12px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover, .nav-btn.active { border-color: var(--dorado); color: var(--dorado); }
+
+        /* Hero Header */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--crema);
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 { font-family: 'Cinzel', serif; font-size: 2.8rem; color: var(--dorado); }
+
+        /* Contenedor */
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .subpage { display: none; animation: fadeIn 0.5s ease-in; }
+        .subpage.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h2 { font-family: 'Cinzel', serif; color: var(--rojo); margin-bottom: 20px; border-bottom: 2px solid var(--dorado); padding-bottom: 5px; }
+        .theory-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        
+        /* Multimedia */
+        .img-relacionada { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--dorado); }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin: 20px 0; border: 2px solid var(--dorado); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        /* Tabla */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th { background: var(--rojo); color: white; padding: 12px; text-align: left; font-family: 'Cinzel'; font-size: 0.8rem; }
+        td { padding: 12px; border: 1px solid #ddd; font-size: 0.9rem; }
+
+        /* Botones de Refuerzo */
+        .btn-refuerzo {
+            background: var(--dorado);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn-refuerzo:hover { background: var(--rojo); }
+
+        footer { background: var(--oscuro); color: var(--crema); text-align: center; padding: 30px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Clasificación del Derecho</h1>
+    </header>
+
+    <nav>
+        <div class="nav-btn active" onclick="showTab('inicio')">INICIO</div>
+        <div class="nav-btn" onclick="showTab('publico')">DERECHO PÚBLICO</div>
+        <div class="nav-btn" onclick="showTab('privado')">DERECHO PRIVADO</div>
+        <div class="nav-btn" onclick="showTab('ramas')">RAMAS DEL DERECHO</div>
+    </nav>
+
+    <main class="container">
+        
+        <div id="inicio" class="subpage active">
+            <h2>Clasificación del Derecho Romano</h2>
+            <div class="theory-card">
+                <p style="font-style: italic; color: #555; margin-bottom: 20px;">
+                    "Publicum ius est quod ad statum rei Romanae spectat, privatum quod ad singulorum utilitatem" 
+                    — Ulpiano.
+                </p>
+                <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800" class="img-relacionada" alt="Derecho Romano">
+                <p><strong>Resumen:</strong> La división fundamental del derecho en Roma separa el interés del Estado de la utilidad de los particulares. Esta estructura, formulada por Ulpiano, establece que el derecho público mira al estado de la cosa romana, mientras el privado a la necesidad individual.</p>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/HKk0wGWxnLA" title="Video Derecho Romano"></iframe>
+                </div>
+
+                <a href="https://www.derechoromano.es/2011/12/ius-publicum-ius-privatum.html" target="_blank" class="btn-refuerzo">Refuerzo: Ius Publicum y Privatum</a>
+            </div>
+        </div>
+
+        <div id="publico" class="subpage">
+            <h2>Derecho Público</h2>
+            <div class="theory-card">
+                <p><strong>Desarrollo Teórico:</strong> Regula la organización del Estado romano y sus relaciones con los ciudadanos. Comprende áreas críticas para el orden social:</p>
+                <ul style="margin: 20px; line-height: 1.8;">
+                    <li><strong>Derecho Constitucional:</strong> Estructura de órganos de gobierno (Senado, magistraturas, asambleas).</li>
+                    <li><strong>Derecho Administrativo:</strong> Funcionamiento de la administración del Estado.</li>
+                    <li><strong>Derecho Penal:</strong> Delitos que afectan el orden público (crimina) y sus penas.</li>
+                    <li><strong>Derecho Sacro (ius sacrum):</strong> Normas sobre el culto y sacerdotes.</li>
+                    <li><strong>Derecho Bélico (ius belli):</strong> Reglas sobre guerra y tratados.</li>
+                </ul>
+                <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=800" class="img-relacionada" alt="Estado Romano">
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/JN7ftznLDvM" title="Video Derecho Público"></iframe>
+                </div>
+
+                <a href="https://es.wikipedia.org/wiki/Derecho_p%C3%BAblico" target="_blank" class="btn-refuerzo">Refuerzo: Teoría del Estado</a>
+            </div>
+        </div>
+
+        <div id="privado" class="subpage">
+            <h2>Derecho Privado</h2>
+            <div class="theory-card">
+                <p><strong>Desarrollo Teórico:</strong> Regula las relaciones entre particulares. Es el núcleo del Derecho Romano clásico y se enfoca en la utilidad de los individuos en sus transacciones y vida cotidiana.</p>
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800" class="img-relacionada" alt="Contratos">
+                <p>A diferencia del público, aquí predomina la autonomía de la voluntad, donde los ciudadanos establecen sus propias reglas en contratos, herencias y familia bajo el amparo de la ley civil.</p>
+                <a href="https://vlex.es/vid/derecho-privado-romano-215264" target="_blank" class="btn-refuerzo">Refuerzo: Ius Privatum Clásico</a>
+            </div>
+        </div>
+
+        <div id="ramas" class="subpage">
+            <h2>Ramas del Derecho Privado</h2>
+            <div class="theory-card">
+                <p><strong>Desarrollo Teórico:</strong> Según sus fuentes, el derecho privado se divide en tres ramas que definen quién puede usar la ley y bajo qué principios:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rama</th>
+                            <th>Origen</th>
+                            <th>Contenido Principal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ius Civile</strong></td>
+                            <td>Ley, costumbre, jurisprudencia.</td>
+                            <td>Solo para ciudadanos romanos.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ius Gentium</strong></td>
+                            <td>Costumbre común a los pueblos.</td>
+                            <td>Para romanos y extranjeros.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ius Naturale</strong></td>
+                            <td>Razón natural.</td>
+                            <td>Principios universales (hombres y animales).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/gCKGhyOsS2g" title="Ramas del Derecho"></iframe>
+                </div>
+                <a href="https://www.worldhistory.org/trans/es/1-11882/derecho-romano/" target="_blank" class="btn-refuerzo">Refuerzo: Historia del Derecho</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p><strong>Nombre de la Web: Clasificación del Derecho</strong></p>
+        <p>Proyecto IA Gemini - Universidad Central del Ecuador</p>
+    </footer>
+
+    <script>
+        function showTab(id) {
+            // Ocultar todas las páginas
+            document.querySelectorAll('.subpage').forEach(p => p.classList.remove('active'));
+            // Desactivar todos los botones
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            
+            // Mostrar la seleccionada
+            document.getElementById(id).classList.add('active');
+            // Activar botón
+            event.currentTarget.classList.add('active');
+            
+            window.scrollTo({ top: 300, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
