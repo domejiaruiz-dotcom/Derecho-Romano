@@ -3,222 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clasificación del Derecho</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --dorado: #C9A84C;
-            --rojo: #8B1A1A;
-            --crema: #FAF7F0;
-            --oscuro: #1a1a1a;
+            --rojo-romano: #8B1A1A;
+            --fondo-crema: #FAF7F0;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Lato', sans-serif; background-color: var(--crema); color: var(--oscuro); line-height: 1.6; }
-        
-        /* Navegación */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--fondo-crema);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e0d7c6 0%, #FAF7F0 50%, #e0d7c6 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--dorado);
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            color: var(--rojo-romano);
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            color: var(--dorado);
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .ulpiano {
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 1rem;
+        }
+
         nav {
-            background: var(--rojo);
-            padding: 1rem;
             position: sticky;
             top: 0;
+            background-color: var(--rojo-romano);
+            padding: 10px 0;
             z-index: 1000;
             display: flex;
             justify-content: center;
-            gap: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        .nav-btn {
-            color: var(--crema);
+        nav a {
+            color: var(--fondo-crema);
             text-decoration: none;
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
-            cursor: pointer;
-            padding: 8px 12px;
-            border: 1px solid transparent;
+            margin: 5px 12px;
+            font-size: 0.75rem;
             transition: 0.3s;
         }
 
-        .nav-btn:hover, .nav-btn.active { border-color: var(--dorado); color: var(--dorado); }
+        nav a:hover { color: var(--dorado); }
 
-        /* Hero Header */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200');
-            background-size: cover;
-            background-position: center;
-            height: 40vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--crema);
-            text-align: center;
-            padding: 20px;
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        header h1 { font-family: 'Cinzel', serif; font-size: 2.8rem; color: var(--dorado); }
-
-        /* Contenedor */
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        .subpage { display: none; animation: fadeIn 0.5s ease-in; }
-        .subpage.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        h2 { font-family: 'Cinzel', serif; color: var(--rojo); margin-bottom: 20px; border-bottom: 2px solid var(--dorado); padding-bottom: 5px; }
-        .theory-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 25px; }
-        
-        /* Multimedia */
-        .img-relacionada { width: 100%; height: 300px; object-fit: cover; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--dorado); }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin: 20px 0; border: 2px solid var(--dorado); }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-
-        /* Tabla */
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th { background: var(--rojo); color: white; padding: 12px; text-align: left; font-family: 'Cinzel'; font-size: 0.8rem; }
-        td { padding: 12px; border: 1px solid #ddd; font-size: 0.9rem; }
-
-        /* Botones de Refuerzo */
-        .btn-refuerzo {
-            background: var(--dorado);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--rojo-romano);
+            border-bottom: 2px solid var(--dorado);
+            margin-bottom: 30px;
             display: inline-block;
-            margin-right: 10px;
-            margin-top: 10px;
-            transition: 0.3s;
         }
-        .btn-refuerzo:hover { background: var(--rojo); }
 
-        footer { background: var(--oscuro); color: var(--crema); text-align: center; padding: 30px; margin-top: 40px; }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 15px rgba(201, 168, 76, 0.3);
+        }
+
+        .card-publico { background-color: var(--rojo-romano); color: var(--fondo-crema); }
+        .card-privado { background-color: #f1e6c8; border: 1px solid var(--dorado); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+            font-size: 0.85rem;
+        }
+
+        th, td { padding: 10px; border: 1px solid var(--dorado); text-align: left; }
+        th { background-color: var(--dorado); color: white; font-family: 'Cinzel', serif; }
+
+        .accordion {
+            background-color: white;
+            color: var(--rojo-romano);
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: 1px solid var(--dorado);
+            text-align: left;
+            font-family: 'Cinzel', serif;
+            margin-top: 8px;
+        }
+
+        .panel { padding: 0 15px; display: none; background-color: white; border: 1px solid var(--dorado); border-top: none; }
+
+        .timeline { display: flex; justify-content: space-between; margin-top: 30px; position: relative; }
+        .timeline::before { content: ''; position: absolute; top: 20px; left: 0; width: 100%; height: 3px; background: var(--dorado); z-index: 1; }
+
+        .node { position: relative; z-index: 2; text-align: center; width: 30%; }
+        .dot { width: 40px; height: 40px; background: var(--rojo-romano); border: 3px solid var(--dorado); border-radius: 50%; margin: 0 auto 10px; cursor: pointer; transition: 0.3s; }
+        .dot:hover { transform: scale(1.15); }
+
+        .desc { display: none; background: white; padding: 12px; border-radius: 5px; margin-top: 8px; box-shadow: 0 3px 5px rgba(0,0,0,0.1); font-size: 0.9rem; }
+
+        .btn-top { position: fixed; bottom: 25px; right: 25px; background: var(--rojo-romano); color: var(--dorado); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold; box-shadow: 0 3px 8px rgba(0,0,0,0.3); z-index: 1001; }
+
+        footer { background: var(--rojo-romano); color: var(--fondo-crema); text-align: center; padding: 30px 20px; font-family: 'Cinzel', serif; font-size: 0.85rem; margin-top: 40px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Clasificación del Derecho</h1>
-    </header>
+<header id="top">
+    <div class="subtitle">Ius Romanum — Divisio et Ordo</div>
+    <h1>Clasificación del Derecho Romano</h1>
+    <p class="ulpiano">"Publicum ius est quod ad statum rei Romanae spectat, privatum quod ad singulorum utilitatem"</p>
+</header>
 
-    <nav>
-        <div class="nav-btn active" onclick="showTab('inicio')">INICIO</div>
-        <div class="nav-btn" onclick="showTab('publico')">DERECHO PÚBLICO</div>
-        <div class="nav-btn" onclick="showTab('privado')">DERECHO PRIVADO</div>
-        <div class="nav-btn" onclick="showTab('ramas')">RAMAS DEL DERECHO</div>
-    </nav>
+<nav>
+    <a href="#destinatario">Destinatario</a>
+    <a href="#fuente">Fuente</a>
+    <a href="#obligatoriedad">Obligatoriedad</a>
+    <a href="#forma">Forma</a>
+    <a href="#ambito">Ámbito</a>
+    <a href="#periodo">Período</a>
+</nav>
 
-    <main class="container">
-        
-        <div id="inicio" class="subpage active">
-            <h2>Clasificación del Derecho Romano</h2>
-            <div class="theory-card">
-                <p style="font-style: italic; color: #555; margin-bottom: 20px;">
-                    "Publicum ius est quod ad statum rei Romanae spectat, privatum quod ad singulorum utilitatem" 
-                    — Ulpiano.
-                </p>
-                <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800" class="img-relacionada" alt="Derecho Romano">
-                <p><strong>Resumen:</strong> La división fundamental del derecho en Roma separa el interés del Estado de la utilidad de los particulares. Esta estructura, formulada por Ulpiano, establece que el derecho público mira al estado de la cosa romana, mientras el privado a la necesidad individual.</p>
-                
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/HKk0wGWxnLA" title="Video Derecho Romano"></iframe>
-                </div>
-
-                <a href="https://www.derechoromano.es/2011/12/ius-publicum-ius-privatum.html" target="_blank" class="btn-refuerzo">Refuerzo: Ius Publicum y Privatum</a>
-            </div>
+<section id="destinatario">
+    <h2>Por su destinatario</h2>
+    <div class="card-container">
+        <div class="card card-publico">
+            <h3>🏛️ Derecho Público</h3>
+            <ul style="list-style: none; margin-top: 10px;">
+                <li>⚖️ <b>Constitucional:</b> Senado y magistraturas.</li>
+                <li>📜 <b>Administrativo:</b> Gestión del Estado.</li>
+                <li>⚖️ <b>Penal:</b> Crimina y penas.</li>
+                <li>🕯️ <b>Sacro:</b> Culto y sacerdotes.</li>
+                <li>🛡️ <b>Bélico:</b> Guerra y tratados.</li>
+            </ul>
         </div>
-
-        <div id="publico" class="subpage">
-            <h2>Derecho Público</h2>
-            <div class="theory-card">
-                <p><strong>Desarrollo Teórico:</strong> Regula la organización del Estado romano y sus relaciones con los ciudadanos. Comprende áreas críticas para el orden social:</p>
-                <ul style="margin: 20px; line-height: 1.8;">
-                    <li><strong>Derecho Constitucional:</strong> Estructura de órganos de gobierno (Senado, magistraturas, asambleas).</li>
-                    <li><strong>Derecho Administrativo:</strong> Funcionamiento de la administración del Estado.</li>
-                    <li><strong>Derecho Penal:</strong> Delitos que afectan el orden público (crimina) y sus penas.</li>
-                    <li><strong>Derecho Sacro (ius sacrum):</strong> Normas sobre el culto y sacerdotes.</li>
-                    <li><strong>Derecho Bélico (ius belli):</strong> Reglas sobre guerra y tratados.</li>
-                </ul>
-                <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&q=80&w=800" class="img-relacionada" alt="Estado Romano">
-                
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/JN7ftznLDvM" title="Video Derecho Público"></iframe>
-                </div>
-
-                <a href="https://es.wikipedia.org/wiki/Derecho_p%C3%BAblico" target="_blank" class="btn-refuerzo">Refuerzo: Teoría del Estado</a>
-            </div>
+        <div class="card card-privado">
+            <h3>👤 Derecho Privado</h3>
+            <table>
+                <tr><th>Rama</th><th>Origen</th><th>Contenido</th></tr>
+                <tr><td>Ius Civile</td><td>Ley/Costumbre</td><td>Solo ciudadanos</td></tr>
+                <tr><td>Ius Gentium</td><td>Costumbre pueblos</td><td>Romanos/Extranjeros</td></tr>
+                <tr><td>Ius Naturale</td><td>Razón natural</td><td>Principios universales</td></tr>
+            </table>
         </div>
+    </div>
+</section>
 
-        <div id="privado" class="subpage">
-            <h2>Derecho Privado</h2>
-            <div class="theory-card">
-                <p><strong>Desarrollo Teórico:</strong> Regula las relaciones entre particulares. Es el núcleo del Derecho Romano clásico y se enfoca en la utilidad de los individuos en sus transacciones y vida cotidiana.</p>
-                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800" class="img-relacionada" alt="Contratos">
-                <p>A diferencia del público, aquí predomina la autonomía de la voluntad, donde los ciudadanos establecen sus propias reglas en contratos, herencias y familia bajo el amparo de la ley civil.</p>
-                <a href="https://vlex.es/vid/derecho-privado-romano-215264" target="_blank" class="btn-refuerzo">Refuerzo: Ius Privatum Clásico</a>
-            </div>
+<section id="fuente" style="background: rgba(201, 168, 76, 0.03);">
+    <h2>Por su fuente</h2>
+    <button class="accordion">Ius Civile</button>
+    <div class="panel"><p style="padding: 10px;">Exclusivo del civis, rígido, basado en mores maiorum y Ley de las XII Tablas.</p></div>
+    <button class="accordion">Ius Gentium</button>
+    <div class="panel"><p style="padding: 10px;">Del praetor peregrinus, flexible; universalizado con el Edicto de Caracalla 212 d.C.</p></div>
+    <button class="accordion">Ius Naturale</button>
+    <div class="panel"><p style="padding: 10px;">Incorporado por Justiniano en el Digesto siguiendo a Ulpiano.</p></div>
+</section>
+
+<section id="periodo">
+    <h2>Por el período histórico</h2>
+    <div class="timeline">
+        <div class="node">
+            <div class="dot" onclick="toggleDesc('d1')"></div>
+            <p><b>Arcaico</b></p>
+            <div id="d1" class="desc">753-130 a.C. XII Tablas, ritualista.</div>
         </div>
-
-        <div id="ramas" class="subpage">
-            <h2>Ramas del Derecho Privado</h2>
-            <div class="theory-card">
-                <p><strong>Desarrollo Teórico:</strong> Según sus fuentes, el derecho privado se divide en tres ramas que definen quién puede usar la ley y bajo qué principios:</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Rama</th>
-                            <th>Origen</th>
-                            <th>Contenido Principal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Ius Civile</strong></td>
-                            <td>Ley, costumbre, jurisprudencia.</td>
-                            <td>Solo para ciudadanos romanos.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Ius Gentium</strong></td>
-                            <td>Costumbre común a los pueblos.</td>
-                            <td>Para romanos y extranjeros.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Ius Naturale</strong></td>
-                            <td>Razón natural.</td>
-                            <td>Principios universales (hombres y animales).</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/gCKGhyOsS2g" title="Ramas del Derecho"></iframe>
-                </div>
-                <a href="https://www.worldhistory.org/trans/es/1-11882/derecho-romano/" target="_blank" class="btn-refuerzo">Refuerzo: Historia del Derecho</a>
-            </div>
+        <div class="node">
+            <div class="dot" onclick="toggleDesc('d2')"></div>
+            <p><b>Clásico</b></p>
+            <div id="d2" class="desc">130 a.C.-230 d.C. Esplendor: Gayo, Papiniano, Ulpiano.</div>
         </div>
+        <div class="node">
+            <div class="dot" onclick="toggleDesc('d3')"></div>
+            <p><b>Postclásico</b></p>
+            <div id="d3" class="desc">230-565 d.C. Justiniano: Corpus Iuris Civilis.</div>
+        </div>
+    </div>
+</section>
 
-    </main>
+<footer>
+    "Derecho Romano — Corpus Iuris Civilis de Justiniano (533 d.C.)"
+</footer>
 
-    <footer>
-        <p><strong>Nombre de la Web: Clasificación del Derecho</strong></p>
-        <p>Proyecto IA Gemini - Universidad Central del Ecuador</p>
-    </footer>
+<a href="#top" class="btn-top">↑</a>
 
-    <script>
-        function showTab(id) {
-            // Ocultar todas las páginas
-            document.querySelectorAll('.subpage').forEach(p => p.classList.remove('active'));
-            // Desactivar todos los botones
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            
-            // Mostrar la seleccionada
-            document.getElementById(id).classList.add('active');
-            // Activar botón
-            event.currentTarget.classList.add('active');
-            
-            window.scrollTo({ top: 300, behavior: 'smooth' });
-        }
-    </script>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            panel.style.display = (panel.style.display === "block") ? "none" : "block";
+        });
+    }
+
+    function toggleDesc(id) {
+        var x = document.getElementById(id);
+        x.style.display = (x.style.display === "block") ? "none" : "block";
+    }
+</script>
 </body>
 </html>
